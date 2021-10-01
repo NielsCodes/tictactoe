@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tictactoe';
+
+  board = [
+    ['A', 'B', 'C'],
+    ['D', 'E', 'F'],
+    ['G', 'H', 'I']
+  ]
+
+  playSpace(y: number, x: number) {
+    this.board[y][x] = 'X';
+  }
+
 }
