@@ -7,31 +7,39 @@
   width: 100vw
   font-family: sans-serif
 
-  #board-container
+  main
     background: #fff
     padding: 40px
     box-shadow: 4px 4px 8px rgb(0 0 0 / 20%)
     width: clamp(300px, 80vw, 800px)
-    display: grid
-    grid-template-rows: 1fr 1fr 1fr
-    grid-template-columns: 1fr 1fr 1fr
 
-    .space
-      display: block
-      aspect-ratio: 1
-      display: flex
-      align-items: center
-      justify-content: center
-      border-top: 5px solid black
-      border-left: 5px solid black
-      cursor: pointer
-      font-size: 4em
+  main
+    #heading-container
+      #reset-btn
+        cursor: pointer
+        user-select: none
 
-      &:nth-child(n+1):nth-child(-n+3)
-        border-top: none
+    #board-container
+      display: grid
+      grid-template-rows: 1fr 1fr 1fr
+      grid-template-columns: 1fr 1fr 1fr
 
-      &:nth-child(3n+1)
-        border-left: none
+      .space
+        display: block
+        aspect-ratio: 1
+        display: flex
+        align-items: center
+        justify-content: center
+        border-top: 5px solid black
+        border-left: 5px solid black
+        cursor: pointer
+        font-size: 4em
+
+        &:nth-child(n+1):nth-child(-n+3)
+          border-top: none
+
+        &:nth-child(3n+1)
+          border-left: none
 
 
 
