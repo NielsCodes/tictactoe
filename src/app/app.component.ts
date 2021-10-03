@@ -161,21 +161,20 @@ export class AppComponent {
     // Call minimax recursively from there
     for (let i=0; i < 3; i++) {
       for (let j=0; j < 3; j++) {
-        if (board[i][j] === '') {
+        if (board[i][j] !== '') continue;
 
-          board[i][j] = character;
-          let [score] = this.minimax(board, !isMaximizing);
-          board[i][j] = '';
+        board[i][j] = character;
+        let [score] = this.minimax(board, !isMaximizing);
+        board[i][j] = '';
 
-          if (score > maxScore) {
-            maxScore = score;
-            maxPos = {i,j};
-          }
+        if (score > maxScore) {
+          maxScore = score;
+          maxPos = {i,j};
+        }
 
-          if (score < minScore) {
-            minScore = score;
-            minPos = {i,j};
-          }
+        if (score < minScore) {
+          minScore = score;
+          minPos = {i,j};
         }
       }
     }
