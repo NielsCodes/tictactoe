@@ -3,22 +3,27 @@
   <main>
 
     <div id="heading-container">
-      <h1>Tic Tac Toe</h1>
-      <!-- <h4 *ngIf="player === 'human' && winner === null">Your turn (X)</h4>
-      <h4 *ngIf="player === 'ai' && winner === null">AI's turn (O)</h4>
-      <h4 *ngIf="winner !== null" (click)="resetGame()" id="reset-btn">{{ winner }} wins. Reset?</h4> -->
+      <h1>(Unbeatable) Tic Tac Toe</h1>
+      <h4 *ngIf="player === 'X' && winner === null">Your turn (X)</h4>
+      <h4 *ngIf="player === 'O' && winner === null">AI's turn (O)</h4>
+      <h4 *ngIf="winner !== null && winner !== 'tie'" (click)="resetGame()" id="reset-btn">{{ winner }} wins. Reset?</h4>
+      <h4 *ngIf="winner == 'tie'" (click)="resetGame()" id="reset-btn">Tie. Reset?</h4>
     </div>
 
-    <div id="board-container">
-      <div class="space" (click)="playSpace(0,0)">{{ board[0][0] }}</div>
-      <div class="space" (click)="playSpace(0,1)">{{ board[0][1] }}</div>
-      <div class="space" (click)="playSpace(0,2)">{{ board[0][2] }}</div>
-      <div class="space" (click)="playSpace(1,0)">{{ board[1][0] }}</div>
-      <div class="space" (click)="playSpace(1,1)">{{ board[1][1] }}</div>
-      <div class="space" (click)="playSpace(1,2)">{{ board[1][2] }}</div>
-      <div class="space" (click)="playSpace(2,0)">{{ board[2][0] }}</div>
-      <div class="space" (click)="playSpace(2,1)">{{ board[2][1] }}</div>
-      <div class="space" (click)="playSpace(2,2)">{{ board[2][2] }}</div>
+    <div id="board-container" [class.disabled]="player === 'O' || winner !== null">
+      <div class="space" (click)="board[0][0] === '' && playSpace(0,0)" [class.disabled]="board[0][0] !== ''">{{ board[0][0] }}</div>
+      <div class="space" (click)="board[0][1] === '' && playSpace(0,1)" [class.disabled]="board[0][1] !== ''">{{ board[0][1] }}</div>
+      <div class="space" (click)="board[0][2] === '' && playSpace(0,2)" [class.disabled]="board[0][2] !== ''">{{ board[0][2] }}</div>
+      <div class="space" (click)="board[1][0] === '' && playSpace(1,0)" [class.disabled]="board[1][0] !== ''">{{ board[1][0] }}</div>
+      <div class="space" (click)="board[1][1] === '' && playSpace(1,1)" [class.disabled]="board[2][1] !== ''">{{ board[1][1] }}</div>
+      <div class="space" (click)="board[1][2] === '' && playSpace(1,2)" [class.disabled]="board[1][2] !== ''">{{ board[1][2] }}</div>
+      <div class="space" (click)="board[2][0] === '' && playSpace(2,0)" [class.disabled]="board[2][0] !== ''">{{ board[2][0] }}</div>
+      <div class="space" (click)="board[2][1] === '' && playSpace(2,1)" [class.disabled]="board[2][1] !== ''">{{ board[2][1] }}</div>
+      <div class="space" (click)="board[2][2] === '' && playSpace(2,2)" [class.disabled]="board[2][2] !== ''">{{ board[2][2] }}</div>
+    </div>
+
+    <div id="credits-container">
+      <p>Dimitri Batchev & Niels Kersic, 2021</p>
     </div>
 
   </main>
