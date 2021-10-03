@@ -141,7 +141,7 @@ export class AppComponent {
   minimax(board: string[][], isMaximizing: boolean): [number, {i: number, j: number} | null] {
     // Recursive base case
     const [winner] = this.checkWinner(board);
-    if (winner !== null) {
+    if (winner) {
       return [this.scores[winner], null];
     }
 
