@@ -11,15 +11,15 @@
     </div>
 
     <div id="board-container" [class.disabled]="player === 'O' || winner !== null">
-      <div class="space" (click)="board[0][0] === '' && playSpace(0,0)" [class.disabled]="board[0][0] !== ''">{{ board[0][0] }}</div>
-      <div class="space" (click)="board[0][1] === '' && playSpace(0,1)" [class.disabled]="board[0][1] !== ''">{{ board[0][1] }}</div>
-      <div class="space" (click)="board[0][2] === '' && playSpace(0,2)" [class.disabled]="board[0][2] !== ''">{{ board[0][2] }}</div>
-      <div class="space" (click)="board[1][0] === '' && playSpace(1,0)" [class.disabled]="board[1][0] !== ''">{{ board[1][0] }}</div>
-      <div class="space" (click)="board[1][1] === '' && playSpace(1,1)" [class.disabled]="board[2][1] !== ''">{{ board[1][1] }}</div>
-      <div class="space" (click)="board[1][2] === '' && playSpace(1,2)" [class.disabled]="board[1][2] !== ''">{{ board[1][2] }}</div>
-      <div class="space" (click)="board[2][0] === '' && playSpace(2,0)" [class.disabled]="board[2][0] !== ''">{{ board[2][0] }}</div>
-      <div class="space" (click)="board[2][1] === '' && playSpace(2,1)" [class.disabled]="board[2][1] !== ''">{{ board[2][1] }}</div>
-      <div class="space" (click)="board[2][2] === '' && playSpace(2,2)" [class.disabled]="board[2][2] !== ''">{{ board[2][2] }}</div>
+      <div class="space" (click)="board[0][0] === '' && winner === null && playSpace(0,0)" [class.disabled]="board[0][0] !== ''">{{ board[0][0] }}</div>
+      <div class="space" (click)="board[0][1] === '' && winner === null && playSpace(0,1)" [class.disabled]="board[0][1] !== ''">{{ board[0][1] }}</div>
+      <div class="space" (click)="board[0][2] === '' && winner === null && playSpace(0,2)" [class.disabled]="board[0][2] !== ''">{{ board[0][2] }}</div>
+      <div class="space" (click)="board[1][0] === '' && winner === null && playSpace(1,0)" [class.disabled]="board[1][0] !== ''">{{ board[1][0] }}</div>
+      <div class="space" (click)="board[1][1] === '' && winner === null && playSpace(1,1)" [class.disabled]="board[2][1] !== ''">{{ board[1][1] }}</div>
+      <div class="space" (click)="board[1][2] === '' && winner === null && playSpace(1,2)" [class.disabled]="board[1][2] !== ''">{{ board[1][2] }}</div>
+      <div class="space" (click)="board[2][0] === '' && winner === null && playSpace(2,0)" [class.disabled]="board[2][0] !== ''">{{ board[2][0] }}</div>
+      <div class="space" (click)="board[2][1] === '' && winner === null && playSpace(2,1)" [class.disabled]="board[2][1] !== ''">{{ board[2][1] }}</div>
+      <div class="space" (click)="board[2][2] === '' && winner === null && playSpace(2,2)" [class.disabled]="board[2][2] !== ''">{{ board[2][2] }}</div>
     </div>
 
     <div id="credits-container">
