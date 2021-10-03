@@ -16,9 +16,15 @@
 
   main
     #heading-container
+      margin-bottom: 40px
+      cursor: default
+
       #reset-btn
         cursor: pointer
         user-select: none
+
+      .subheading
+        margin-top: 5px
 
     #credits-container
       margin-top: 40px
@@ -45,6 +51,7 @@
         font-size: 4em
         user-select: none
         color: #FFC500
+        transition: all .2s ease
 
         &:nth-child(n+1):nth-child(-n+3)
           border-top: none
@@ -55,4 +62,5 @@
         &.disabled
           cursor: not-allowed !important
 
-
+        &.marked
+          color: #FF4954
